@@ -1,22 +1,28 @@
 ---
 name: rotifer-self-evolving-agent
-version: 2.2.1
-description: Your Agent evolves itself — scans capabilities, benchmarks against Arena rankings, and upgrades automatically
-author: rotifer-protocol
-permissions:
-  - network:outbound
-triggers:
-  - command: /evolve
-mcp:
-  server:
-    command: npx
-    args:
-      - "@rotifer/mcp-server@0.8.5"
+description: Evolve AI agents with Rotifer Protocol. Use when you want to scan local agent capabilities, compare Genes in the Arena, inspect fitness scores, or upgrade weak capabilities with stronger alternatives.
+license: Apache-2.0
+compatibility: Requires network access and npx to run @rotifer/mcp-server@0.8.5 for Arena rankings and Gene metadata.
+metadata:
+  author: rotifer-protocol
+  version: "2.2.1"
+  command: /evolve
+  mcp-package: "@rotifer/mcp-server@0.8.5"
 ---
 
 # Rotifer Self Evolving Agent
 
 Your Agent gets stronger by competing, not by configuring. Scan capabilities, benchmark against [Arena rankings](https://rotifer.dev), and upgrade to fitter alternatives — driven by objective performance data, not opinions.
+
+## Runtime Integration
+
+This skill is invoked with `/evolve` and uses the Rotifer MCP Server at runtime:
+
+```bash
+npx @rotifer/mcp-server@0.8.5
+```
+
+The MCP server provides Gene search, Arena rankings, fitness details, comparison, and local install operations.
 
 ## Quick Start
 
